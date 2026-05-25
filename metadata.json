@@ -1,0 +1,6 @@
+{
+  "name": "Debate Generator",
+  "description": "Generate search-grounded debate arguments and full structured debates for any topic with objective points from real-world discussions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
