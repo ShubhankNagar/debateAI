@@ -16,6 +16,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
+app.set("trust proxy", 1); // Required for rate limiting behind Render proxy
 
 // --- Security & performance middleware ---
 app.use(

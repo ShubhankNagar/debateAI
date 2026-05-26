@@ -3,7 +3,7 @@
  * Each debate gets a unique short ID for shareable URLs.
  * TTL: 24 hours. Max entries: 500.
  */
-import { nanoid } from "nanoid";
+import { randomBytes } from "crypto";
 
 interface CachedDebate {
   id: string;
@@ -70,7 +70,7 @@ class DebateCache {
     this.evictExpired();
     this.evictOldest();
 
-    const id = nanoid(10);
+    const id = randomBytes(5).toString("hex");
     const entry: CachedDebate = {
       id,
       topic,

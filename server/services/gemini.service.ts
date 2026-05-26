@@ -45,7 +45,7 @@ async function generateGrounded(topic: string): Promise<GeminiDebateResult> {
   console.log(`[Gemini] Tier 1: Grounded synthesis for "${topic}"`);
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.0-flash",
     contents: `Search the web and synthesize an objective, high-quality debate on the topic: "${topic}"`,
     config: {
       systemInstruction: DEBATE_SYSTEM_PROMPT,
@@ -83,7 +83,7 @@ async function generateStandard(topic: string, originalError?: string): Promise<
   console.log(`[Gemini] Tier 2: Standard synthesis for "${topic}"`);
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.0-flash",
     contents: `Synthesize a highly objective, balanced debate on the topic: "${topic}"`,
     config: {
       systemInstruction: DEBATE_SYSTEM_PROMPT,
