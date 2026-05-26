@@ -76,9 +76,10 @@ function AppContent() {
         loadDebateById(idInUrl);
       }
     } else if (currentHash === "" || currentHash === "#/") {
-      if (debate || isLoading) reset();
+      if (debate) reset();
     }
-  }, [currentHash, loadDebateById, reset, debateId, isLoading, debate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentHash]);
 
   const handleGenerate = async (topic: string) => {
     // Navigate home visually first so loading state shows there

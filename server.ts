@@ -3,6 +3,7 @@
  * Slim orchestrator: loads middleware, routes, and starts the server.
  */
 import express from "express";
+import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import helmet from "helmet";
@@ -12,6 +13,9 @@ import { errorHandler } from "./server/middleware/errorHandler";
 import topicRoutes from "./server/routes/topics";
 import debateRoutes from "./server/routes/debate";
 
+if (fs.existsSync(".env.local")) {
+  dotenv.config({ path: ".env.local" });
+}
 dotenv.config();
 
 const app = express();
